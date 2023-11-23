@@ -1,0 +1,13 @@
+<div class="card shadow-effect" *ngIf="postData" [routerLink]="['/post',postData.id]">
+    <img  src="{{postData.data.postImgPath}}" alt="post-image" class="card-img-top">
+    <div class="card-body">
+            <small class="bg-light text-danger text-center">{{postData.data.category.category}}</small>
+            <small class="bg-light text-success  text-center ml-2" *ngIf="postData.data.isFeatured">Featured</small>
+            <small class="bg-light text-info  text-center ml-2">Views -{{postData.data.views}}</small>
+            <small class="bg-light text-warning text-center ml-2">Last Update - SEP 20, 2023</small>
+        <h5 class="mt-1"> {{postData.data.title}}</h5>
+        <h5 class="mt-1">{{postData.data.excerpt}}</h5>
+        <small class="bg-light text-warning  text-center ml-3">Last Update - {{postData.data.createdAt.toMillis()|date}}</small>
+
+    </div>
+</div>
